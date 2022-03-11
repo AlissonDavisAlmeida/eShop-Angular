@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "projects": {
+        "admin": "apps/admin",
+        "admin-e2e": "apps/admin-e2e",
+        "ng-shop": "apps/ng-shop",
+        "ng-shop-e2e": "apps/ng-shop-e2e",
+        "ui": "libs/ui"
+    }
+}
