@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { MenuItem } from "primeng/api";
 
 @Component({
   selector: "pet-shop-home-page",
@@ -7,9 +8,12 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HomePageComponent implements OnInit {
 
+ 
+  
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
