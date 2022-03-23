@@ -10,7 +10,7 @@
                     "error",
                     {
                         "type": "attribute",
-                        "prefix": "petShop",
+                        "prefix": "admin",
                         "style": "camelCase"
                     }
                 ],
@@ -18,10 +18,14 @@
                     "error",
                     {
                         "type": "element",
-                        "prefix": "pet-shop",
+                        "prefix": "admin",
                         "style": "kebab-case"
                     }
-                ]
+                ],
+                "@typescript-eslint/no-empty-function":"off",
+                "@angular-eslint/no-empty-lifecycle-method":"off",
+                "semi":"warn",
+                "quotes":"warn"
             }
         },
         {
