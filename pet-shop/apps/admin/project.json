@@ -2,7 +2,7 @@
     "projectType": "application",
     "root": "apps/admin",
     "sourceRoot": "apps/admin/src",
-    "prefix": "pet-shop",
+    "prefix": "admin",
     "targets": {
         "build": {
             "executor": "@angular-devkit/build-angular:browser",
