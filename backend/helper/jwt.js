@@ -13,13 +13,14 @@ const authGuardJwt = () => expressJwt({
   isRevoked: revoked,
 }).unless({
   path: [
-    { url: /\/api\/v1\/produtos(.*)/, methods: ["GET", "OPTIONS"] },
+  /*   { url: /\/api\/v1\/produtos(.*)/, methods: ["GET", "OPTIONS"] },
     { url: /\/api\/v1\/categorias(.*)/, methods: ["GET", "OPTIONS"] },
     { url: /\/api\/v1\/usuarios(.*)/, methods: ["GET", "OPTIONS"] },
     { url: /\/api\/v1\/pedidos(.*)/, methods: ["GET", "OPTIONS"] },
     { url: /\/public(.*)/, methods: ["GET", "OPTIONS"] },
     `/api/v1/usuarios/login`,
-    `/api/v1/usuarios/signup`,
+    `/api/v1/usuarios/signup`, */
+    { url: /(.*)/ },
 
   ],
 });
