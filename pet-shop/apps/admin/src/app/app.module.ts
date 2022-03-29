@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import {  RouterModule, Routes } from "@angular/router";
+import {HttpClientModule} from "@angular/common/http"
 
 import { AppComponent } from "./app.component";
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
@@ -12,6 +13,10 @@ import {CardModule} from 'primeng/card';
 import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import {InputTextModule} from 'primeng/inputtext';
+
+import { CategoriesService } from "@pet-shop/products";
+import { CategoriesFormComponent } from './categories/categories-form/categories-form.component';
 
 const routes : Routes = [
     {path:"", component:ShellComponent, children:
@@ -21,23 +26,28 @@ const routes : Routes = [
         },
         {
             path:"categorias", component:CategoriesListComponent
+        },
+        {
+            path:"categorias/form", component:CategoriesFormComponent
         }
     ]}
 ];
 
 
 @NgModule({
-    declarations: [AppComponent, ShellComponent, SidebarComponent, CategoriesListComponent],
+    declarations: [AppComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent],
     imports: [
-        BrowserModule, 
+        BrowserModule,
+        HttpClientModule, 
         RouterModule.forRoot(routes, {initialNavigation:"enabled"}),
         CardModule,
         ToolbarModule,
         ButtonModule,
-        TableModule
+        TableModule,
+        InputTextModule
     ],
     
-    providers: [],
+    providers: [CategoriesService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
