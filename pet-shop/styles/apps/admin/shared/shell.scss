@@ -7,17 +7,20 @@
         padding: 0;
         margin: 0%;
         display: flex;
+        
     }
 
     &-main{
         width: calc(100% - 175px);
         margin-left: 175px;
+       color: rgb(230, 224, 224);
     }
 
     &-sidebar{
        
         width: 175px;
-        background-color: rgba(35, 20, 167, 0.671);
+        background-color: rgba(87, 8, 161, 0.671);
+        z-index: 10;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -77,5 +80,11 @@
                
             }
         }
+    }
+
+    &-page{
+        
+        padding: 1rem;
+       
     }
 }
