@@ -30,7 +30,7 @@ rotaCategorias.get("/:id", (req, res) => {
       });
     }
     return res.status(200).json({
-      retorno,
+      categoria: retorno,
     });
   }, (erro) => {
     console.log(erro);
@@ -42,7 +42,7 @@ rotaCategorias.post("/", async (req, res) => {
   const categoria = new Categorias({
     name: req.body.name,
     icon: req.body.icon,
-    cor: req.body.cor,
+    color: req.body.color,
   });
   const retornoCategoria = await categoria.save();
 
@@ -58,6 +58,7 @@ rotaCategorias.post("/", async (req, res) => {
 });
 
 rotaCategorias.put("/:id", (req, res) => {
+  console.log(req.body);
   const { name, icon, color } = req.body;
   const { id } = req.params;
 

@@ -1,17 +1,24 @@
 <div class="admin-page">
+    <p-confirmDialog  header="Confirmation" icon="pi pi-exclamation-triangle" [style]="{width:'50vw'}"
+    rejectButtonStyleClass="p-button-text p-2" acceptButtonStyleClass="p-2"></p-confirmDialog>
     <p-toast position="top-right" key="success"></p-toast>
-    <p-card header="Adicionar Categoria" subheader="">
+    <p-card>
+        <ng-template pTemplate="header">
+            <div class="header">{{ editMode? 'Atualizar Categoria': 'Nova Categoria'}}</div>
+        </ng-template>
         <div class="grid">
             <div class="col-12 ">
                 <p-toolbar>
                     <div class="p-toolbar-group-right  p-2">
-                        <p-button styleClass="p-button-help p-2 mr-2 p-button-raised" label="Salvar" (click)="submit()"
-                                   icon="pi pi-check">
+                        <button pButton type="button" class="p-button-help p-2 mr-2 p-button-raised" 
+                                [label]="editMode?'Atualizar' : 'Salvar'" 
+                            (click)="submit()"
+                            icon="pi pi-check"></button>
+                       
 
-                        </p-button>
-                        <p-button styleClass="p-button-help p-2 p-button-outlined p-button-raised"
-                         label="Cancelar"  icon="pi pi-times" routerLink="../"
-                         >
+                        
+                        <p-button styleClass="p-button-help p-2 p-button-outlined p-button-raised" label="Cancelar"
+                            icon="pi pi-times" routerLink="../">
 
                         </p-button>
                     </div>
@@ -20,22 +27,27 @@
         </div>
         <div class="grid mt-3">
             <div class="col-12">
-               <form [formGroup]="myForm">
-                   <div class="formgrid grid">
-                       <div class="col field">
-                           <label for="name">Nome</label>
-                           <input type="text" id="name" formControlName="name" class="p-inputtext-sm w-full"
-                            pInputText>
-                          
-                       </div>
-                       <div class="col field">
-                           <label for="icon">Ícone</label>
-                           <input type="text" id="icon" formControlName="icon" class="p-inputtext-sm w-full" pInputText>
-                           
-                       </div>
-                       
-                   </div>
-               </form>
+                <form [formGroup]="myForm">
+                    <div class="formgrid grid">
+                        <div class="col field">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" formControlName="name" class="p-inputtext-sm w-full"
+                                pInputText>
+
+                        </div>
+                        <div class="col field">
+                            <label for="icon">Ícone</label>
+                            <input type="text" id="icon" formControlName="icon" class="p-inputtext-sm w-full"
+                                pInputText>
+                                
+                        </div>
+                        <div class="col-12 field">
+                            <label for="color" class="mr-2">Cor</label>
+                            <p-colorPicker  id="color" formControlName="color"></p-colorPicker>
+                        </div>
+
+                    </div>
+                </form>
             </div>
         </div>
     </p-card>
