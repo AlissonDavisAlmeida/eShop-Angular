@@ -1,9 +1,8 @@
 
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Categories, CategoriesService } from "@pet-shop/products";
 import { ConfirmationService, MessageService } from "primeng/api";
-import { Subscription } from "rxjs";
 
 @Component({
   selector: "admin-categories-list",
@@ -31,8 +30,8 @@ export class CategoriesListComponent implements OnInit{
   }
 
   goToEditForm(idCategoria : number): void {
-    console.log(idCategoria)
-    this.route.navigate(["form"], {relativeTo:this.activeRoute, queryParams:{idCategoria}})
+    console.log(idCategoria);
+    this.route.navigate(["form"], {relativeTo:this.activeRoute, queryParams:{idCategoria}});
   }
 
   removeCategory(idCategoria: number) {

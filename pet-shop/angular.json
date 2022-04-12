@@ -9,5 +9,6 @@
         "products": "libs/products",
         "ui": "libs/ui",
         "users": "libs/users"
+        
     }
 }

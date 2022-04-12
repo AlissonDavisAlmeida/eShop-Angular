@@ -1,5 +1,5 @@
 <div class="admin-page">
-    
+
     <p-toast position="top-right" key="success"></p-toast>
     <p-card header="Categorias" subheader="">
         <div class="grid">
@@ -19,8 +19,9 @@
                 <p-table [value]="categories" responsiveLayout="scroll" styleClass="p-datatable-gridlines">
                     <ng-template pTemplate="header">
                         <tr>
-                            
-                            <th>Name</th>
+
+                            <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon>
+                            </th>
                             <th>Icon</th>
                             <th>Color</th>
                             <th>Actions</th>
@@ -28,14 +29,20 @@
                     </ng-template>
                     <ng-template pTemplate="body" let-category>
                         <tr>
-                           
+
                             <td>{{category.name}}</td>
-                            <td>{{category.icon}}</td>
-                            <td>{{category.color}}</td>
+                            <td class="text-center"><i class="text-xl pi" [ngClass]="'pi-'+category.icon"></i></td>
+                            <td class="text-center">
+                                <i
+                                class="pi pi-circle-on"
+                                style="font-size: 2.3rem"
+                                [ngStyle]="{ color: category.color }"
+                               ></i>
+                            </td>
                             <td class="flex justify-content-center">
                                 <button pButton type="button"
-                                    class="p-button-raised p-button-rounded p-button-help mr-4"
-                                    icon="pi pi-pencil" (click)="goToEditForm(category._id)"></button>
+                                    class="p-button-raised p-button-rounded p-button-help mr-4" icon="pi pi-pencil"
+                                    (click)="goToEditForm(category._id)"></button>
                                 <button pButton type="button" (click)="removeCategory(category._id)"
                                     class="p-button-raised p-button-rounded p-button-danger"
                                     icon="pi pi-trash"></button>
@@ -48,4 +55,4 @@
     </p-card>
 </div>
 <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" [style]="{width:'50vw'}"
-                rejectButtonStyleClass="p-button-text p-2" acceptButtonStyleClass="p-2"></p-confirmDialog>
+    rejectButtonStyleClass="p-button-text p-2" acceptButtonStyleClass="p-2"></p-confirmDialog>

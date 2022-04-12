@@ -19,7 +19,8 @@
             "@pet-shop/orders": ["libs/orders/src/index.ts"],
             "@pet-shop/products": ["libs/products/src/index.ts"],
             "@pet-shop/ui": ["libs/ui/src/index.ts"],
-            "@pet-shop/users": ["libs/users/src/index.ts"]
+            "@pet-shop/users": ["libs/users/src/index.ts"],
+            "@env/*":["environment/*"]
         }
     },
     "exclude": ["node_modules", "tmp"]

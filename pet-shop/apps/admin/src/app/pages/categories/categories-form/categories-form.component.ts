@@ -105,7 +105,7 @@ export class CategoriesFormComponent implements OnInit {
 
   }
 
-  private configureMessage(retorno :any){
+  private configureMessage(retorno : any){
     this.messageService.add({
       key: "success",
       severity: "success",
@@ -116,8 +116,9 @@ export class CategoriesFormComponent implements OnInit {
     
     setTimeout(() => {
       this.route.navigate(["../"], { relativeTo: this.active });
+      this.myForm.reset();
     }, 800);
-    this.myForm.reset();
+    
 
   }
 
